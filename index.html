@@ -314,7 +314,8 @@ function toast(t){const e=$('toast');e.textContent=t;e.classList.add('show');cle
 
 /* dates */
 function today(){const d=new Date();return new Date(d.getFullYear(),d.getMonth(),d.getDate())}
-function nextB(m,T){let d=new Date(T.getFullYear(),m.m-1,m.d);if(d<T)d=new Date(T.getFullYear()+1,m.m-1,m.d);return d}
+function bday(m,y){return (m.m===2&&m.d===29&&new Date(y,1,29).getMonth()!==1)?new Date(y,1,28):new Date(y,m.m-1,m.d)}
+function nextB(m,T){let d=bday(m,T.getFullYear());if(d<T)d=bday(m,T.getFullYear()+1);return d}
 function daysTo(m,T){return Math.round((nextB(m,T)-T)/864e5)}
 function ageOk(m){return m.y<=today().getFullYear()-8}
 function ageAt(m,d){return d.getFullYear()-m.y}
