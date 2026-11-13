@@ -210,20 +210,16 @@ textarea.inp{min-height:120px;resize:vertical;line-height:1.5}
     <img class="deco" src="lotus.png" alt="" data-b="40,318,150,105"><img class="deco" src="lotus.png" alt="" data-b="751,318,150,105" style="transform:scaleX(-1)">
     <div class="big-t" data-b="40,222,861,100" data-fs="74">જન્મદિન મંગલોત્સવ</div>
     <img class="deco" src="divider.png" alt="" data-b="280,318,381,41">
-    <div class="lbl2" data-b="290,362,361,50" data-fs="27">રિમાઇન્ડર અને શુભેચ્છા</div>
-    <div class="card" data-b="24,432,893,884"></div>
+    <div class="card" data-b="24,380,893,1118"></div>
     <div id="lbl"></div>
-    <button class="photo" id="hPhoto" aria-label="ફટાકડા" data-b="312,590,310,310"></button>
-    <img class="deco" src="frame.png" alt="" data-b="220,505,500,457">
+    <button class="photo" id="hPhoto" aria-label="ફટાકડા" data-b="244,586,440,440"></button>
+    <img class="deco" src="frame.png" alt="" data-b="120,470,700,640">
     <div id="hSwipe"></div>
-    <div class="big-t" data-b="40,948,861,84" data-fs="62">જન્મદિન મંગલમય હો!</div>
-    <img class="deco" src="divider.png" alt="" data-b="320,1024,301,32">
-    <div class="namepill2" id="hName" data-b="236,1056,469,72" data-fs="40"></div>
-    <div class="mtext" id="hDate" data-b="200,1132,541,44" data-fs="30" style="color:#5a1033;font-weight:700"></div>
-    <button class="sendbtn" id="hSend" data-b="72,1188,797,96" data-fs="38">🙏 <i>|</i> મંગલ શુભકામનાઓ પાઠવો <b style="margin-left:.3em">›</b></button>
-    <a class="tile" href="#upcoming" data-b="40,1338,280,150" data-fs="27"><svg viewBox="0 0 24 24" fill="none" stroke="#c2185b" stroke-width="1.8"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5"/><circle cx="17" cy="16" r="4.5"/><path d="M17 13.8V16l1.5 1"/></svg>આગામી<br>જન્મદિવસ</a>
-    <a class="tile" href="#calendar" data-b="331,1338,280,150" data-fs="27"><svg viewBox="0 0 24 24" fill="none" stroke="#c2185b" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="8" cy="14" r=".8" fill="#c2185b"/><circle cx="12" cy="14" r=".8" fill="#c2185b"/><circle cx="16" cy="14" r=".8" fill="#c2185b"/><circle cx="8" cy="17.5" r=".8" fill="#c2185b"/><circle cx="12" cy="17.5" r=".8" fill="#c2185b"/></svg>કેલેન્ડર</a>
-    <a class="tile" href="#members" data-b="622,1338,280,150" data-fs="27"><svg viewBox="0 0 24 24" fill="none" stroke="#c2185b" stroke-width="1.8"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.6c2.6.1 4.4 1.8 5 4.9"/></svg>સભ્યોની<br>યાદી</a>
+    <div class="big-t" data-b="40,1108,861,86" data-fs="66">જન્મદિન મંગલમય હો!</div>
+    <img class="deco" src="divider.png" alt="" data-b="320,1190,301,32">
+    <div class="namepill2" id="hName" data-b="216,1228,509,78" data-fs="42"></div>
+    <div class="mtext" id="hDate" data-b="170,1312,601,48" data-fs="33" style="color:#5a1033;font-weight:700"></div>
+    <button class="sendbtn" id="hSend" data-b="66,1372,809,104" data-fs="40">🙏 <i>|</i> મંગલ શુભકામનાઓ પાઠવો <b style="margin-left:.3em">›</b></button>
   </div>
 </section>
 
@@ -349,13 +345,13 @@ function renderHome(){
   hList=todays.length?todays:[MEMBERS.slice().sort((a,b)=>daysTo(a,T)-daysTo(b,T))[0]];
   if(hIdx>=hList.length)hIdx=0;
   const m=hList[hIdx],isT=todays.length>0;
-  $('lbl').innerHTML=`<div class="lbl2" data-b="${isT?'262,452,417,72':'192,452,557,72'}" data-fs="34"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="#c2185b" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>${isT?'આજનો જન્મદિવસ':'આગામી જન્મદિવસ · '+g(daysTo(m,T))+' દિવસ'}</div>`;
+  $('lbl').innerHTML=`<div class="lbl2" data-b="${isT?'262,398,417,72':'192,398,557,72'}" data-fs="34"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="#c2185b" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>${isT?'આજનો જન્મદિવસ':'આગામી જન્મદિવસ · '+g(daysTo(m,T))+' દિવસ'}</div>`;
   const s=photoSrc(m);
-  $('hPhoto').innerHTML=s?`<img src="${s}" alt="">`:`<span class="ini" style="font-size:${140*$('stage').clientWidth/941}px">${esc(initial(m.n))}</span>`;
+  $('hPhoto').innerHTML=s?`<img src="${s}" alt="">`:`<span class="ini" style="font-size:${200*$('stage').clientWidth/941}px">${esc(initial(m.n))}</span>`;
   $('hName').textContent=m.n;
-  const k=$('stage').clientWidth/941;const fit=Math.min(40,Math.floor(900/Math.max(10,m.n.length)));$('hName').dataset.fs=fit;
+  const k=$('stage').clientWidth/941;const fit=Math.min(42,Math.floor(960/Math.max(10,m.n.length)));$('hName').dataset.fs=fit;
   $('hDate').innerHTML=`<span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="#c2185b" stroke-width="2" style="vertical-align:-.12em"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> ${dstr(m)}${ageOk(m)?' · '+ageTxt(m):''}</span>`;
-  $('hSwipe').innerHTML=hList.length>1?`<button class="swipe" data-hs="-1" data-b="150,715,64,64">‹</button><button class="swipe" data-hs="1" data-b="727,715,64,64">›</button><div class="dots" data-b="300,915,341,16">${hList.map((_,i)=>`<i class="${i===hIdx?'on':''}"></i>`).join('')}</div>`:'';
+  $('hSwipe').innerHTML=hList.length>1?`<button class="swipe" data-hs="-1" data-b="56,774,64,64">‹</button><button class="swipe" data-hs="1" data-b="821,774,64,64">›</button><div class="dots" data-b="300,1090,341,16">${hList.map((_,i)=>`<i class="${i===hIdx?'on':''}"></i>`).join('')}</div>`:'';
   layoutStage($('stage'));
   clearInterval(hTimer);if(hList.length>1)hTimer=setInterval(()=>{hIdx=(hIdx+1)%hList.length;renderHome()},5000);
 }
