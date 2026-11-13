@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="gu">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>જન્મદિન મંગલોત્સવ – શ્રી નરનારાયણદેવ યુવક-યુવતી મંડળ, નડિયાદ</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+Bhai+2:wght@500;600;700;800&family=Hind+Vadodara:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--mar:#9c0f4f;--rose:#d81b6a;--gold:#e0a43a;--ink:#5a1033;--mute:#9a5a78;--safe-b:env(safe-area-inset-bottom,0px)}
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent}
+html{background:#f6c3d8}body{color:var(--ink)}
+body{font-family:'Hind Vadodara','Baloo Bhai 2',sans-serif;font-size:16px;line-height:1.45;overflow-x:hidden;
+}
+h1,h2,h3,.bb{font-family:'Baloo Bhai 2',sans-serif;line-height:1.2}
+button{font:inherit;color:inherit;border:0;background:none;cursor:pointer}
+a{color:inherit;text-decoration:none}
+input,textarea{font:inherit;color:var(--ink)}
+.app{max-width:470px;margin:0 auto;position:relative;min-height:100vh}
+.view{display:none}.view.on{display:block;animation:fade .35s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}}
+
+/* ===== image stage (scaled by --k = width/941) ===== */
+.stage{position:relative;width:100%}
+.stage>img.bgimg{display:block;width:100%;height:auto;user-select:none;-webkit-user-drag:none}
+.at{position:absolute}
+.hot{position:absolute;border-radius:30px;display:block}
+.hot:active{background:rgba(255,255,255,.18)}
+.hot.round{border-radius:50%}
+
+/* layered home */
+.bgfix{position:fixed;inset:0;z-index:-1;background:#f3bfd4 url(bg.jpg) center bottom/cover no-repeat}
+
+.deco{position:absolute;pointer-events:none;user-select:none}
+.mtext{position:absolute;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;font-family:'Baloo Bhai 2';font-weight:800;color:#8e1050;line-height:1.15}
+.big-t{position:absolute;display:flex;align-items:center;justify-content:center;white-space:nowrap;font-family:'Baloo Bhai 2';font-weight:800;
+  color:#d4155f;-webkit-text-stroke:.04em #fff;paint-order:stroke fill;text-shadow:0 .04em 0 #fff,0 .07em .12em rgba(160,20,80,.35)}
+.rbtn{position:absolute;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;line-height:1.05;
+  background:radial-gradient(circle at 40% 30%,#ef5f96,#c0175a 70%,#9c0f4f);box-shadow:0 0 0 .05em #ffd7e6,0 .08em .2em rgba(160,20,80,.35)}
+.rbtn svg{width:42%;height:42%}
+.rbtn span{font-size:.2em;margin-top:.12em;font-family:'Baloo Bhai 2'}
+.card{position:absolute;border-radius:calc(var(--k)*40px);background:linear-gradient(180deg,rgba(255,246,250,.55),rgba(255,226,239,.6));
+  box-shadow:0 10px 30px rgba(214,70,130,.18),inset 0 0 40px rgba(255,255,255,.55)}
+.card::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:calc(var(--k)*9px);pointer-events:none;
+  background:linear-gradient(135deg,#ffe3f3,#e45aa8 12%,#fff4fa 22%,#d23d8f 34%,#ffd0ea 46%,#e45aa8 58%,#fff4fa 70%,#d23d8f 82%,#ffe3f3);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;box-shadow:inset 0 0 6px #fff}
+.lbl2{position:absolute;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:.35em;font-family:'Baloo Bhai 2';font-weight:800;color:#6b0f3a;
+  background:linear-gradient(180deg,#fff8fb,#fde4ee);box-shadow:0 0 0 .06em #f0c27a,0 .1em .3em rgba(214,90,140,.2)}
+.namepill2{position:absolute;border-radius:999px;display:flex;align-items:center;justify-content:center;text-align:center;white-space:nowrap;overflow:hidden;padding:0 .5em;
+  font-family:'Baloo Bhai 2';font-weight:800;color:#8e1050;background:linear-gradient(180deg,#fff3f8,#fbd3e4);box-shadow:0 0 0 .05em #f0c27a,inset 0 .06em .1em #fff,0 .08em .2em rgba(214,90,140,.2)}
+.sendbtn{position:absolute;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:.5em;color:#fff;font-family:'Baloo Bhai 2';font-weight:700;
+  background:linear-gradient(180deg,#ea4d88,#b5124f);box-shadow:0 0 0 .07em #f1c46a,0 .2em .4em rgba(181,18,79,.35),inset 0 .08em 0 rgba(255,255,255,.35)}
+.sendbtn i{font-style:normal;opacity:.6}
+.tile{position:absolute;border-radius:calc(var(--k)*28px);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:.2em;text-align:center;
+  font-family:'Baloo Bhai 2';font-weight:700;color:#9c0f4f;line-height:1.1;background:linear-gradient(180deg,rgba(255,250,252,.9),rgba(255,232,242,.85));
+  box-shadow:0 0 0 calc(var(--k)*3px) #fff,0 6px 16px rgba(214,70,130,.2)}
+.tile svg{width:2em;height:2em}
+/* photo in frame */
+.photo{position:absolute;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 40% 30%,#ffe9f2,#f4a9c7 75%,#e98bb3);display:flex;align-items:center;justify-content:center}
+.photo img{width:100%;height:100%;object-fit:cover}
+.photo .ini{font-family:'Baloo Bhai 2';font-weight:800;color:#fff;text-shadow:0 3px 0 #d04a86,0 8px 20px rgba(160,20,80,.35)}
+.band{position:absolute;pointer-events:none}
+
+/* overlays on home */
+.namepill{position:absolute;border-radius:999px;display:flex;align-items:center;justify-content:center;text-align:center;
+  background:linear-gradient(180deg,#fff1f6 0%,#fde0ec 55%,#fbd0e2 100%);box-shadow:inset 0 2px 3px rgba(255,255,255,.9),inset 0 -2px 4px rgba(214,90,140,.18);
+  font-family:'Baloo Bhai 2';font-weight:800;color:#8e1050;white-space:nowrap;overflow:hidden;padding:0 .4em}
+.datepill{position:absolute;display:flex;align-items:center;justify-content:center;border-radius:20px;
+  background:radial-gradient(70% 90% at 50% 50%,#fffafc 40%,#fde6ee 100%);font-family:'Baloo Bhai 2';font-weight:700;color:#5a1033}
+.lblpill{position:absolute;border-radius:999px;display:flex;align-items:center;justify-content:center;gap:.4em;
+  background:linear-gradient(180deg,#fff6fa,#fde4ee);border:2px solid #f0c27a;box-shadow:0 2px 8px rgba(214,90,140,.15);font-family:'Baloo Bhai 2';font-weight:800;color:#6b0f3a}
+.dots{position:absolute;display:flex;gap:6px;justify-content:center}
+.dots i{width:8px;height:8px;border-radius:50%;background:#fff;opacity:.6;box-shadow:0 0 0 1px #d0558b}
+.dots i.on{opacity:1;background:#d81b6a}
+.swipe{position:absolute;width:40px;height:40px;border-radius:50%;background:rgba(255,255,255,.75);color:#9c0f4f;font-size:22px;font-weight:800;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(160,20,80,.2)}
+
+/* ===== inner pages ===== */
+.head{position:relative}
+.head img{display:block;width:100%}
+.backbtn,.bellbtn{position:absolute;border-radius:50%;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff;font-weight:700;
+  background:radial-gradient(circle at 40% 30%,#ef5f96,#c0175a 70%,#9c0f4f);box-shadow:0 0 0 3px #ffd7e6,0 6px 14px rgba(160,20,80,.35);line-height:1}
+.ptitle{text-align:center;margin:2px 16px 0;font-size:32px;font-weight:800;color:#d4155f;-webkit-text-stroke:2px #fff;paint-order:stroke fill;text-shadow:0 3px 6px rgba(160,20,80,.3)}
+.divider{height:16px;margin:2px auto 12px;width:70%;position:relative;background:linear-gradient(90deg,transparent,var(--gold) 30%,var(--gold) 70%,transparent) center/100% 1.6px no-repeat}
+.divider::after{content:"❖";position:absolute;left:50%;top:50%;transform:translate(-50%,-52%);color:#c98a1c;font-size:14px;background:#fde0ec;padding:0 6px;border-radius:6px}
+.wrap{padding:0 14px calc(20px + var(--safe-b))}
+.footdeco{display:flex;justify-content:center;align-items:flex-end;gap:2%;padding:14px 8px 18px}.footdeco img{width:38%}.footdeco img.dy{width:20%}
+.foot{display:block;width:100%;margin-top:14px;-webkit-mask:linear-gradient(transparent,#000 40%);mask:linear-gradient(transparent,#000 40%)}
+
+/* crystal card */
+.cr{position:relative;border-radius:22px;background:linear-gradient(180deg,rgba(255,251,253,.94),rgba(255,231,241,.9));
+  box-shadow:0 8px 22px rgba(214,70,130,.16),inset 0 1px 0 #fff;margin-bottom:12px}
+.cr::before{content:"";position:absolute;inset:0;border-radius:inherit;padding:2.5px;pointer-events:none;
+  background:linear-gradient(135deg,#ffd6ee,#e45aa8 22%,#fff2f9 40%,#d23d8f 60%,#ffe1f2 78%,#e8a43f);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude}
+.cr.gold::before{background:linear-gradient(135deg,#ffe9b0,#e0a43a 30%,#fff3d1 50%,#c98a1c 75%,#ffe9b0)}
+.row{display:flex;align-items:center;gap:12px;padding:12px 12px}
+.row .t{flex:1;min-width:0}
+.row .t b{display:block;font-family:'Baloo Bhai 2';font-size:17px;font-weight:700;color:#6b0f3a;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.row .t small{font-size:13.5px;color:var(--mute)}
+.badge{font-family:'Baloo Bhai 2';font-weight:700;font-size:13px;padding:5px 11px;border-radius:999px;white-space:nowrap;color:#fff;background:linear-gradient(180deg,#ec5891,#b5124f);box-shadow:0 2px 0 #f1c46a}
+.badge.soft{background:#fff;color:#b5124f;box-shadow:inset 0 0 0 1.5px #f0b7cf}
+.badge.gold{background:linear-gradient(180deg,#ffd77d,#e0a43a);color:#5a2a00;box-shadow:none}
+.av{position:relative;flex:none;width:56px;height:56px;border-radius:50%;padding:3px;background:conic-gradient(from 20deg,#ffd6ee,#e45aa8,#fff2f9,#d23d8f,#ffe1f2,#e8a43f,#ffd6ee);box-shadow:0 3px 8px rgba(214,70,130,.25)}
+.av>div{width:100%;height:100%;border-radius:50%;overflow:hidden;background:radial-gradient(circle at 40% 30%,#fff0f6,#f4a9c7);display:flex;align-items:center;justify-content:center;font-family:'Baloo Bhai 2';font-weight:800;font-size:22px;color:#fff;text-shadow:0 2px 0 #d04a86}
+.av img{width:100%;height:100%;object-fit:cover}
+.av.lg{width:96px;height:96px}.av.lg>div{font-size:40px}
+.av .crown{position:absolute;top:-13px;left:50%;transform:translateX(-50%);font-size:18px}
+
+.btnm{display:flex;align-items:center;justify-content:center;gap:10px;width:100%;min-height:52px;padding:10px 18px;border-radius:999px;color:#fff;font-family:'Baloo Bhai 2';font-weight:700;font-size:18px;
+  background:linear-gradient(180deg,#ea4d88,#b5124f);border:2px solid #f1c46a;box-shadow:0 6px 16px rgba(181,18,79,.35),inset 0 2px 0 rgba(255,255,255,.35)}
+.btnm.wa{background:linear-gradient(180deg,#3fd57c,#1a9b52);border-color:#c9f2d9}
+.btns{display:inline-flex;align-items:center;justify-content:center;gap:6px;min-height:40px;padding:8px 14px;border-radius:999px;font-family:'Baloo Bhai 2';font-weight:700;font-size:15px;color:#9c0f4f;background:#fff;box-shadow:inset 0 0 0 1.5px #f0b7cf,0 2px 6px rgba(214,70,130,.12)}
+.btns.on{background:linear-gradient(180deg,#ec5891,#b5124f);color:#fff;box-shadow:0 2px 0 #f1c46a}
+.btns[disabled]{opacity:.45;pointer-events:none}
+.secth{display:flex;justify-content:space-between;align-items:baseline;margin:16px 4px 8px}
+.secth h3{font-size:19px;color:#9c0f4f}
+.secth span{font-size:13px;color:var(--mute)}
+.empty{padding:18px;text-align:center;color:var(--mute)}
+.warn{color:#c81e4a;font-size:12.5px}
+
+/* search + filters */
+.search{display:flex;align-items:center;gap:10px;padding:2px 16px}
+.search input{flex:1;border:0;outline:0;background:none;padding:13px 0;font-size:16px}
+.chips{display:flex;gap:8px;overflow-x:auto;padding:2px 2px 10px}
+
+/* calendar */
+.calh{display:flex;justify-content:space-between;align-items:center;padding:12px 12px 4px}
+.calh b{font-family:'Baloo Bhai 2';font-size:21px;color:#9c0f4f}
+.grid{display:grid;grid-template-columns:repeat(7,1fr);gap:5px;padding:6px 10px 14px}
+.grid .wd{text-align:center;font-size:12.5px;color:var(--mute);font-weight:600}
+.grid .c{aspect-ratio:1;border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;font-family:'Baloo Bhai 2';font-size:15px;font-weight:600;color:#6b0f3a;position:relative}
+.grid .c.has{background:linear-gradient(180deg,#ffe3ef,#fbc3db);box-shadow:inset 0 0 0 1.5px #f19cc2}
+.grid .c.has::after{content:"🪷";font-size:11px;line-height:1;margin-top:1px}
+.grid .c.today{background:linear-gradient(180deg,#ec5891,#b5124f);color:#fff;box-shadow:0 0 0 2px #f1c46a}
+.grid .c.sel{outline:2px solid #e0a43a}
+
+/* fields */
+.field{padding:14px}
+.field label{display:block;font-family:'Baloo Bhai 2';font-weight:700;color:#9c0f4f;margin-bottom:6px}
+.field p{font-size:13.5px;color:var(--mute);margin-top:6px}
+.inp{width:100%;background:#fff;border:1.5px solid #f3c1d6;border-radius:14px;padding:11px 12px;outline:0;font-size:16px}
+.inp:focus{border-color:#d81b6a}
+textarea.inp{min-height:120px;resize:vertical;line-height:1.5}
+.menu-it{display:flex;align-items:center;gap:14px;padding:14px}
+.menu-it .ic{width:46px;height:46px;border-radius:50%;flex:none;display:flex;align-items:center;justify-content:center;font-size:22px;background:linear-gradient(180deg,#ffe3ef,#fbc3db);box-shadow:inset 0 0 0 1.5px #f19cc2}
+.menu-it b{font-family:'Baloo Bhai 2';font-size:17px;color:#6b0f3a;display:block}
+.menu-it small{color:var(--mute);font-size:13px}
+
+/* sheet */
+.ov{position:fixed;inset:0;z-index:50;background:rgba(90,10,45,.35);backdrop-filter:blur(4px);display:none;align-items:flex-end;justify-content:center}
+.ov.show{display:flex}
+.sheet{width:min(470px,100%);max-height:92vh;overflow:auto;border-radius:28px 28px 0 0;padding:20px 16px calc(22px + var(--safe-b));background:linear-gradient(180deg,#fff6fa,#fde0ec)}
+.sheet .x{position:absolute;top:12px;right:12px;width:40px;height:40px;border-radius:50%;background:#fff;color:#9c0f4f;font-size:22px;box-shadow:inset 0 0 0 1.5px #f0b7cf}
+
+/* celebration */
+.fly{position:fixed;inset:0;z-index:60;display:none;flex-direction:column;align-items:center;overflow:auto;background:url(bg.jpg) center/cover}
+.fly.show{display:flex}
+.fly canvas{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+.fly .in{position:relative;width:min(420px,92vw);display:flex;flex-direction:column;align-items:center;padding:40px 0 30px;margin:0 auto}
+.fly .fr{position:relative;width:86%;margin-top:10px}
+.fly .fr img.f{display:block;width:100%}
+.fly .ttl{width:100%;margin-top:4px}
+.fly .nm{margin-top:8px;padding:8px 22px;font-size:24px}
+.fly .close{position:fixed;top:14px;right:14px;z-index:2}
+.toast{position:fixed;left:50%;bottom:30px;transform:translateX(-50%) translateY(20px);opacity:0;z-index:80;padding:10px 16px;border-radius:14px;background:#9c0f4f;color:#fff;font-weight:600;font-size:14px;transition:.25s;pointer-events:none}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}}
+</style>
+</head>
+<body>
+<div class="bgfix"></div>
+<div class="app">
+
+<!-- ================= HOME (the approved design) ================= -->
+<section class="view" id="v-home">
+  <div class="stage home" id="stage" data-h="1672">
+    <img class="deco" src="banner.png" alt="" data-b="150,6,640,213">
+    <div class="mtext" data-b="224,118,492,84" data-fs="31">શ્રી નરનારાયણદેવ<span style="font-size:.86em">યુવક - યુવતી મંડળ, નડિયાદ</span></div>
+    <a class="rbtn" href="#menu" aria-label="મેનુ" data-b="22,34,106,106" data-fs="106"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg><span>મેનુ</span></a>
+    <a class="rbtn" href="#reminder" aria-label="રિમાઇન્ડર" data-b="813,34,106,106" data-fs="106"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a6 6 0 0 0-6 6v5l-2 3v1h16v-1l-2-3V8a6 6 0 0 0-6-6zm-2 17a2 2 0 0 0 4 0z"/></svg><span>રિમાઇન્ડર</span></a>
+    <img class="deco" src="lotus.png" alt="" data-b="40,318,150,105"><img class="deco" src="lotus.png" alt="" data-b="751,318,150,105" style="transform:scaleX(-1)">
+    <div class="big-t" data-b="40,222,861,100" data-fs="74">જન્મદિન મંગલોત્સવ</div>
+    <img class="deco" src="divider.png" alt="" data-b="280,318,381,41">
+    <div class="lbl2" data-b="290,362,361,50" data-fs="27">રિમાઇન્ડર અને શુભેચ્છા</div>
+    <div class="card" data-b="24,432,893,884"></div>
+    <div id="lbl"></div>
+    <button class="photo" id="hPhoto" aria-label="ફટાકડા" data-b="312,590,310,310"></button>
+    <img class="deco" src="frame.png" alt="" data-b="220,505,500,457">
+    <div id="hSwipe"></div>
+    <div class="big-t" data-b="40,948,861,84" data-fs="62">જન્મદિન મંગલમય હો!</div>
+    <img class="deco" src="divider.png" alt="" data-b="320,1024,301,32">
+    <div class="namepill2" id="hName" data-b="236,1056,469,72" data-fs="40"></div>
+    <div class="mtext" id="hDate" data-b="200,1132,541,44" data-fs="30" style="color:#5a1033;font-weight:700"></div>
+    <button class="sendbtn" id="hSend" data-b="72,1188,797,96" data-fs="38">🙏 <i>|</i> મંગલ શુભકામનાઓ પાઠવો <b style="margin-left:.3em">›</b></button>
+    <a class="tile" href="#upcoming" data-b="40,1338,280,150" data-fs="27"><svg viewBox="0 0 24 24" fill="none" stroke="#c2185b" stroke-width="1.8"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5"/><circle cx="17" cy="16" r="4.5"/><path d="M17 13.8V16l1.5 1"/></svg>આગામી<br>જન્મદિવસ</a>
+    <a class="tile" href="#calendar" data-b="331,1338,280,150" data-fs="27"><svg viewBox="0 0 24 24" fill="none" stroke="#c2185b" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/><circle cx="8" cy="14" r=".8" fill="#c2185b"/><circle cx="12" cy="14" r=".8" fill="#c2185b"/><circle cx="16" cy="14" r=".8" fill="#c2185b"/><circle cx="8" cy="17.5" r=".8" fill="#c2185b"/><circle cx="12" cy="17.5" r=".8" fill="#c2185b"/></svg>કેલેન્ડર</a>
+    <a class="tile" href="#members" data-b="622,1338,280,150" data-fs="27"><svg viewBox="0 0 24 24" fill="none" stroke="#c2185b" stroke-width="1.8"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c.8-3.6 3.4-5.5 6.5-5.5s5.7 1.9 6.5 5.5"/><circle cx="17" cy="9" r="2.6"/><path d="M16.5 14.6c2.6.1 4.4 1.8 5 4.9"/></svg>સભ્યોની<br>યાદી</a>
+  </div>
+</section>
+
+<!-- ================= UPCOMING ================= -->
+<section class="view" id="v-upcoming">
+  <div class="headslot"></div>
+  <h2 class="ptitle">આગામી જન્મદિવસ</h2><img src="divider.png" alt="" style="display:block;width:62%;margin:0 auto 12px">
+  <div class="wrap"><div class="chips" id="upF"></div><div id="upList"></div></div>
+  <div style="height:120px"></div>
+</section>
+
+<!-- ================= CALENDAR ================= -->
+<section class="view" id="v-calendar">
+  <div class="headslot"></div>
+  <h2 class="ptitle">જન્મદિન કેલેન્ડર</h2><img src="divider.png" alt="" style="display:block;width:62%;margin:0 auto 12px">
+  <div class="wrap">
+    <div class="cr"><div class="calh"><button class="btns" id="pm" aria-label="અગાઉનો મહિનો">‹</button><b id="calT"></b><button class="btns" id="nm" aria-label="આગળનો મહિનો">›</button></div><div class="grid" id="grid"></div></div>
+    <div class="secth"><h3 id="calL"></h3><span id="calC"></span></div>
+    <div id="calList"></div>
+  </div>
+  <div style="height:120px"></div>
+</section>
+
+<!-- ================= MEMBERS ================= -->
+<section class="view" id="v-members">
+  <div class="headslot"></div>
+  <h2 class="ptitle">સભ્યોની યાદી</h2><img src="divider.png" alt="" style="display:block;width:62%;margin:0 auto 12px">
+  <div class="wrap">
+    <div class="cr search"><span>🔍</span><input id="q" type="search" placeholder="નામ શોધો…" autocomplete="off"></div>
+    <div class="chips" id="mF"></div>
+    <div id="mList"></div>
+  </div>
+  <div style="height:120px"></div>
+</section>
+
+<!-- ================= REMINDER ================= -->
+<section class="view" id="v-reminder">
+  <div class="headslot"></div>
+  <h2 class="ptitle">રિમાઇન્ડર</h2><img src="divider.png" alt="" style="display:block;width:62%;margin:0 auto 12px">
+  <div class="wrap" id="remBody"></div>
+  <div style="height:120px"></div>
+</section>
+
+<!-- ================= MENU / SETTINGS ================= -->
+<section class="view" id="v-menu">
+  <div class="headslot"></div>
+  <h2 class="ptitle">મેનુ</h2><img src="divider.png" alt="" style="display:block;width:62%;margin:0 auto 12px">
+  <div class="wrap">
+    <a class="cr menu-it" href="#upcoming"><span class="ic">🪷</span><span><b>આગામી જન્મદિવસ</b><small>આવતા દિવસોના જન્મદિવસ</small></span></a>
+    <a class="cr menu-it" href="#calendar"><span class="ic">📅</span><span><b>કેલેન્ડર</b><small>મહિના પ્રમાણે જુઓ</small></span></a>
+    <a class="cr menu-it" href="#members"><span class="ic">👥</span><span><b>સભ્યોની યાદી</b><small>નંબર અને ફોટો ઉમેરો</small></span></a>
+    <a class="cr menu-it" href="#reminder"><span class="ic">🔔</span><span><b>રિમાઇન્ડર</b><small>આવતીકાલે અને ૭ દિવસ પહેલા</small></span></a>
+    <div class="secth"><h3>સેટિંગ</h3><span id="sStat" class="warn"></span></div>
+    <div class="cr field"><label for="sTime">રિમાઇન્ડરનો સમય</label><input class="inp" id="sTime" type="time" value="08:00"><p>Google Calendar માં પણ આ જ સમય રાખજો, એટલે ૭ દિવસ પહેલા, આગલા દિવસે અને તે જ દિવસે ફોનમાં નોટિફિકેશન આવશે.</p></div>
+    <div class="cr field"><label for="sAdmin">કમિટીનો WhatsApp નંબર</label><input class="inp" id="sAdmin" inputmode="tel" placeholder="98XXXXXXXX"></div>
+    <div class="cr field"><label for="sMsg">શુભેચ્છા સંદેશ</label><textarea class="inp" id="sMsg"></textarea><p>{નામ} અને {ઉંમર} આપોઆપ બદલાઈ જશે.</p></div>
+    <button class="btnm" id="sSave">સેવ કરો</button>
+    <div class="cr field" style="margin-top:14px"><label>આ એપ વિશે</label><p>શ્રી નરનારાયણદેવ યુવક-યુવતી મંડળ, નડિયાદ – જન્મદિન મંગલોત્સવ. જન્મદિવસના દિવસે ફોટા પર કે "મંગલ શુભકામનાઓ પાઠવો" પર ટેપ કરો એટલે ફટાકડા ફૂટશે અને તૈયાર સંદેશ સાથે WhatsApp ખુલશે.</p></div>
+  </div>
+  <div style="height:120px"></div>
+</section>
+</div>
+
+<div class="ov" id="ov"><div class="sheet" id="sheet" style="position:relative"></div></div>
+<div class="fly" id="fly"><canvas id="flyC"></canvas><button class="btns close" id="flyX">✕ બંધ</button><div class="in" id="flyIn"></div></div>
+<div class="toast" id="toast"></div>
+
+<template id="headTpl">
+  <div class="stage head" data-h="236">
+    <img class="deco" src="banner.png" alt="" data-b="150,6,640,213">
+    <div class="mtext" data-b="224,118,492,84" data-fs="31">શ્રી નરનારાયણદેવ<span style="font-size:.86em">યુવક - યુવતી મંડળ, નડિયાદ</span></div>
+    <a class="rbtn" href="#home" aria-label="હોમ" data-b="22,34,106,106" data-fs="106"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M15 5l-7 7 7 7"/></svg><span>હોમ</span></a>
+    <a class="rbtn" href="#reminder" aria-label="રિમાઇન્ડર" data-b="813,34,106,106" data-fs="106"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a6 6 0 0 0-6 6v5l-2 3v1h16v-1l-2-3V8a6 6 0 0 0-6-6zm-2 17a2 2 0 0 0 4 0z"/></svg><span>રિમાઇન્ડર</span></a>
+  </div>
+</template>
+
+<script>
+const MEMBERS=[{"id": "m01", "n": "સાંખલા અંકુર જયંતિલાલ", "y": 1990, "m": 7, "d": 16, "dr": "https://drive.google.com/open?id=1Vk8lDHHM03UXIeQi0pxiINs4FppDED1n"}, {"id": "m02", "n": "ગોગારી અજેન્દ્ર જયંતિભાઈ", "y": 1997, "m": 11, "d": 13, "dr": "https://drive.google.com/open?id=1WpuJHF4EXLw69UYVOS7Nxs_agln1Oy8a"}, {"id": "m03", "n": "ચવાણ અનુજ સુરેશભાઇ", "y": 2007, "m": 2, "d": 23, "dr": "https://drive.google.com/open?id=12ccfUiRdeAG3S2YPEgEE0IwmyeWTcT0B"}, {"id": "m04", "n": "વેલાણી અનુજ રજનીકાંત", "y": 2004, "m": 6, "d": 12, "dr": "https://drive.google.com/open?id=1SSy0rn9xHti00ZllmneMcwG_c5ldbQL-"}, {"id": "m05", "n": "પોકાર અમૃતભાઈ નારણભાઈ", "y": 1984, "m": 1, "d": 12, "dr": "https://drive.google.com/open?id=1SkLtJR_pNiRiYiWkNamXL8-LiqT_Esdi"}, {"id": "m06", "n": "સાંખલા અલ્પેશભાઈ પ્રેમજીભાઈ", "y": 1985, "m": 8, "d": 8, "dr": "https://drive.google.com/open?id=1rCNE7kvd9lAC0Iatv5jGtNA10PjSGBJF"}, {"id": "m07", "n": "પોકાર અશ્વિનભાઈ નારણભાઈ", "y": 1986, "m": 7, "d": 4, "dr": "https://drive.google.com/open?id=1rBTQYxLvXHQSmq4FRf8xo1ZTTjxNvrqQ"}, {"id": "m08", "n": "પોકાર અશ્વિનભાઈ ઈશ્વરભાઈ", "y": 1986, "m": 8, "d": 25, "dr": "https://drive.google.com/open?id=1pLumnusuArZRGBKIYDSMCfyLf2qN7yrr"}, {"id": "m09", "n": "ચવાન આશિષ ચંદુલાલ", "y": 1991, "m": 8, "d": 31, "dr": "https://drive.google.com/open?id=1hryx_nyhGwCO2RZFG2tyblkgnz_y4Igx"}, {"id": "m10", "n": "પોકાર ઉત્સવ અમૃતભાઈ", "y": 2006, "m": 7, "d": 22, "dr": "https://drive.google.com/open?id=1wZo3rO7upHrxBH07HsYp0TETeuEC5xRL"}, {"id": "m11", "n": "પોકાર ઉત્સવ મહેશભાઈ", "y": 2003, "m": 4, "d": 6, "dr": "https://drive.google.com/open?id=19_BhZqez0yGpXHK-ZW9mLWc-0OWoKRoP"}, {"id": "m12", "n": "વેલાણી ઉમંગ કુમાર રોનકભાઈ", "y": 2009, "m": 9, "d": 10, "dr": "https://drive.google.com/open?id=1Qv7IBPpIGKCAAVfl1XdOr2ky6oZbj7R-"}, {"id": "m13", "n": "પોકાર ઓમ કુમાર મહેશભાઈ", "y": 2007, "m": 9, "d": 29, "dr": "https://drive.google.com/open?id=1KXLg7bjNx4v0qX9rEjyXIlo4QvmmRDBJ"}, {"id": "m14", "n": "પોકાર કાંતિલાલ શિવજી ભાઈ", "y": 1995, "m": 4, "d": 8, "dr": "https://drive.google.com/open?id=1q4jkBdwrqHEj4cmlaqOADvO1wfJpUGlq"}, {"id": "m15", "n": "સાંખલા કિશનભાઇ ધીરજ લાલ", "y": 1992, "m": 5, "d": 6, "dr": "https://drive.google.com/open?id=1Y8C517Ex8_AV8olAlGtt0pJ8WJyKkP7U"}, {"id": "m16", "n": "પોકાર કિશોર કુમાર શામજી ભાઈ", "y": 1981, "m": 8, "d": 26, "dr": "https://drive.google.com/open?id=1i9SrlQmDUBHQyCDmmk_MB-1r7VlPcI1x"}, {"id": "m17", "n": "શાખલા કિસનકુમાર ધીરજલાલ", "y": 1992, "m": 5, "d": 6, "dr": "https://drive.google.com/open?id=1Abgv77zx4NPTHH5lMCtx2Kp6qclVCOHq"}, {"id": "m18", "n": "પોકાર કૃષિલ હીરાલાલ", "y": 2001, "m": 1, "d": 9, "dr": "https://drive.google.com/open?id=1m1-TGA1DeWMW5e2suLSVaqQzm1aA0zND"}, {"id": "m19", "n": "ચવાણ કૌશિક લાલજીભાઈ", "y": 1998, "m": 6, "d": 25, "dr": "https://drive.google.com/open?id=1cf9i_7Mc8uQoszFWNPem61T1KX8X78OC"}, {"id": "m20", "n": "ભગત ગિરીશ હરિલાલ", "y": 1982, "m": 11, "d": 25, "dr": "https://drive.google.com/open?id=1Tnp4lPkhMe4keRE58za1ovIQWm-CoZKQ"}, {"id": "m21", "n": "ગોગારી ચિંતન ગોવિંદભાઈ", "y": 1994, "m": 6, "d": 4, "dr": "https://drive.google.com/open?id=1O6l8DzorAFVo9L_VpXphr6hoJ0oePhN6"}, {"id": "m22", "n": "નાકરાણી જગદીશ હીરાલાલ", "y": 1986, "m": 5, "d": 28, "dr": "https://drive.google.com/open?id=1nBLfgFrN6i2JoW0aNKTwt_-_r19BhPkc"}, {"id": "m23", "n": "પોકાર જય કિશેર કુમાર", "y": 2006, "m": 10, "d": 2, "dr": "https://drive.google.com/open?id=1aAm56GzdYKsnw-VZe-lCsNSOl4qcZL4p"}, {"id": "m24", "n": "સાંખલા જયેશ કિશોર ભાઈ", "y": 2002, "m": 6, "d": 27, "dr": "https://drive.google.com/open?id=1cFrywkBHkyiMFLTRMQ6pUb9R1j84wVEU"}, {"id": "m25", "n": "ચવાણ જીગર ધરમશી ભાઈ", "y": 2023, "m": 12, "d": 30, "dr": "https://drive.google.com/open?id=1S1EnVQzTLk6ZuEr3Ox-wnHQmbjI2CWny"}, {"id": "m26", "n": "વાસાણી જીજ્ઞેશ ભીમજી ભાઈ", "y": 1983, "m": 4, "d": 7, "dr": "https://drive.google.com/open?id=19nNIRvPgxOfJpo1FmikuA69qB7i9IsCS"}, {"id": "m27", "n": "ચવાણ જીત શાંતિલાલભાઇ", "y": 2006, "m": 10, "d": 30, "dr": "https://drive.google.com/open?id=1hVtFr6d61KnZMmby-psjuwVu0EF-UPru"}, {"id": "m28", "n": "પટેલ જીતેન્દ્રભાઈ કરસનભાઈ", "y": 1978, "m": 1, "d": 11, "dr": "https://drive.google.com/open?id=1TkR05iOFpS5k1aj-L-E2vpYjU3GMPZUB"}, {"id": "m29", "n": "ચૌહાણ જુગલ ભરતભાઈ", "y": 1998, "m": 5, "d": 7, "dr": "https://drive.google.com/open?id=1T5cUCcYCHZTsmadU-2q9Kx-flR-j7oRa"}, {"id": "m30", "n": "પોકાર ડાહ્યા ભાઈ(હરેશ) સામજી ભાઈ", "y": 1980, "m": 4, "d": 24, "dr": "https://drive.google.com/open?id=1KiXAbEeP61VSccUF1dvCmUC_tt6e3_GD"}, {"id": "m31", "n": "પોકાર તુલસી દાસ માવજીભાઈ", "y": 1984, "m": 5, "d": 14, "dr": "https://drive.google.com/open?id=12tVck6KkRvKtqVaAoJALWm5ZyOmWCCVc"}, {"id": "m32", "n": "વાસાણી તેજેન્દ્ર હિતેશભાઈ", "y": 2005, "m": 12, "d": 27, "dr": "https://drive.google.com/open?id=1I3rCLYY-a1hL1B3avtMxf5rRSHmwr0Lu"}, {"id": "m33", "n": "પોકાર દર્શન રમેશભાઈ", "y": 2005, "m": 3, "d": 12, "dr": "https://drive.google.com/open?id=1Bqsn6tjWcIsrZiVmU4JNvvD-saxIZ_rU"}, {"id": "m34", "n": "પોકાર દર્શન કેશવલાલ", "y": 1998, "m": 7, "d": 14, "dr": "https://drive.google.com/open?id=14QVLLJ89l_s-IEyhEDLLBDxkTTA_0qoN"}, {"id": "m35", "n": "ચૌહાણ દર્શન સુરેશભાઇ", "y": 2004, "m": 1, "d": 27, "dr": "https://drive.google.com/open?id=1XOcENXWl9lTO5mlMFbIZ53szBeCLL9dl"}, {"id": "m36", "n": "ચૌહાણ દિનેશ ભાઇ ડાયાભાઇ", "y": 1981, "m": 12, "d": 13, "dr": "https://drive.google.com/open?id=1DAtsPUhe8GCP1ux2_WoJ6K7u6DQhOD5M"}, {"id": "m37", "n": "ચૌહાણ દેવેન રમેશભાઈ", "y": 1993, "m": 9, "d": 3, "dr": "https://drive.google.com/open?id=1CETCf-RB69zkKbn-Yj4bYMiHZTe6fnXW"}, {"id": "m38", "n": "પોકાર ધર્મેશ શિવજીભાઈ", "y": 1989, "m": 1, "d": 7, "dr": "https://drive.google.com/open?id=1n6HKlO5-7kip0XR3IIBX6a80q4ulycOI"}, {"id": "m39", "n": "પોકાર ધર્મેશભાઈ ઈશ્વરલાલ", "y": 1988, "m": 3, "d": 13, "dr": "https://drive.google.com/open?id=1NEKbFZu0wUR9Ez1azJCf7FmF7YAsaBi5"}, {"id": "m40", "n": "ચવાણ ધ્રુવ કુમાર વિનોદ ભાઈ", "y": 2003, "m": 10, "d": 3, "dr": "https://drive.google.com/open?id=1JUrKzC9seBDnyslHbh1uGAZfYGl_saVA"}, {"id": "m41", "n": "પોકાર નીતિન રમેશભાઈ", "y": 1992, "m": 1, "d": 2, "dr": "https://drive.google.com/open?id=183qiHGTL0yAnquapwqd9XKjvxasz4ftQ"}, {"id": "m42", "n": "ચવાણ પટેલ હિમાંશુ લાલજીભાઈ", "y": 1995, "m": 9, "d": 21, "dr": "https://drive.google.com/open?id=19OhMrsaaGXP6rQ8NYxlzPh8f4nvzD-27"}, {"id": "m43", "n": "વાસાણી પાર્થ જયંતીભાઈ", "y": 1996, "m": 7, "d": 21, "dr": "https://drive.google.com/open?id=1HT4IspLujbLOELEkswIO-aRro15jjh8L"}, {"id": "m44", "n": "વેલાની પૂજન રજનીકાંત", "y": 2007, "m": 4, "d": 30, "dr": "https://drive.google.com/open?id=1F6kSdgxuTn9JY_-MA_joRE78aKxGp0O9"}, {"id": "m45", "n": "પોકાર પ્રકાશ ભાઈ ખીમજી ભાઈ", "y": 1986, "m": 5, "d": 19, "dr": "https://drive.google.com/open?id=1Z7pNZa5f0vpQbuWzM3KSc3RC3hrlN6CP"}, {"id": "m46", "n": "પોકાર પ્રગ્નેશ કુમાર અમૃતભાઈ", "y": 1987, "m": 5, "d": 10, "dr": "https://drive.google.com/open?id=16PUscKMthNfBWJzc6Hb7pwD5WeyeCFFP"}, {"id": "m47", "n": "વેલાણી પ્રતિક સુરેશભાઈ", "y": 1996, "m": 12, "d": 4, "dr": "https://drive.google.com/open?id=1yW22RvkTc-kE8ZDFvLAmRG0Fy-6D-771"}, {"id": "m48", "n": "પોકાર બાદલ ગોવિંદભાઈ", "y": 1997, "m": 6, "d": 5, "dr": "https://drive.google.com/open?id=15xP_T6oHUgTMq3I5APf-kA2qW8foJqbR"}, {"id": "m49", "n": "પોકાર ભાવેશ શિવજી ભાઈ", "y": 1993, "m": 9, "d": 23, "dr": "https://drive.google.com/open?id=1VBQ-e1H2T9d_ru1TABNRxynwW_lw-MRG"}, {"id": "m50", "n": "સાંખલા ભાવેશ કુમાર ધીરજલાલ", "y": 1989, "m": 12, "d": 28, "dr": "https://drive.google.com/open?id=14b_UUXmRTKypT36Zq6h7xkRoF6eVY7aZ"}, {"id": "m51", "n": "ઘોઘારી મયુરકુમાર રમેશભાઇ", "y": 1993, "m": 5, "d": 29, "dr": "https://drive.google.com/open?id=1gEz6IJvfdZN1B3evQfgFkar1Ae7GPtNb"}, {"id": "m52", "n": "પોકાર મયુરભાઈ કુંવરજીભાઇ", "y": 1990, "m": 4, "d": 7, "dr": "https://drive.google.com/open?id=1U7tomxxZoyUdIru5AQs0DTdey4vmFTNC"}, {"id": "m53", "n": "પોકાર મહેશભાઈ માવજીભાઈ", "y": 1979, "m": 1, "d": 3, "dr": "https://drive.google.com/open?id=1Kba85N3RC50t1taOeE5hb0fRDW-fAYO3"}, {"id": "m54", "n": "પોકાર મિતેષકુમાર અમૃતલાલ", "y": 1986, "m": 12, "d": 23, "dr": "https://drive.google.com/open?id=1tcRIE9KSzBpSMxM0HMhjIDAC3auRoskS"}, {"id": "m55", "n": "પોકાર મુકેશકુમાર શિવજીભાઈ", "y": 1985, "m": 7, "d": 6, "dr": "https://drive.google.com/open?id=1dh0qIP2m0xjpz92EYQrIVqTJ6WhZFzhc"}, {"id": "m56", "n": "પટેલ મોક્ષ જીતેન્દ્રભાઈ", "y": 2008, "m": 12, "d": 17, "dr": "https://drive.google.com/open?id=19uei2fLsMH4olCTHSv0Q3npE4wTetWDc"}, {"id": "m57", "n": "પોકાર મોહિત હીરાલાલ", "y": 1997, "m": 7, "d": 9, "dr": "https://drive.google.com/open?id=19pVwmt-axdZk71zGz5xdNUsTaFdKPIda"}, {"id": "m58", "n": "પોકાર મૌલિક ડાહ્યાભાઈ", "y": 2008, "m": 1, "d": 24, "dr": "https://drive.google.com/open?id=10EdwY_SUp_wBFJder2Nb7LvmcA73xMOg"}, {"id": "m59", "n": "વેલણી રજનીકાંત કાનજીભાઈ", "y": 1981, "m": 1, "d": 2, "dr": "https://drive.google.com/open?id=1KnNIkrj6nzC4zeZVy0KKCRXJTr8qJ8m8"}, {"id": "m60", "n": "નાકરાણી રમેશ કેશરાભાઈ", "y": 1996, "m": 2, "d": 11, "dr": "https://drive.google.com/open?id=1eEpKMam6Mo-GENb-axKQ6sl6NAqCbafz"}, {"id": "m61", "n": "પોકાર રમેશભાઈ વિશ્રામભાઈ", "y": 1980, "m": 6, "d": 5, "dr": "https://drive.google.com/open?id=1Q4GOZ-SpQpPG_3SPCcHOuj7zUr2LsecE"}, {"id": "m62", "n": "ગોગારી રાહુલ કુમાર હિરાલાલ", "y": 2023, "m": 6, "d": 27, "dr": "https://drive.google.com/open?id=1viT_ZeNpO2Z1ROm-15m317XRG5odcOR7"}, {"id": "m63", "n": "વાસાણી રોનક હિમતભાઈ", "y": 1984, "m": 2, "d": 23, "dr": "https://drive.google.com/open?id=1QSdcyvTyA6Z7lwQmC4J-MEMuD9-4GHvl"}, {"id": "m64", "n": "વેલાણી રોનક કુમાર કાનજીભાઈ", "y": 1992, "m": 8, "d": 25, "dr": "https://drive.google.com/open?id=1IEiyVBiPTqA8MjRkLAn4djTi29CICs79"}, {"id": "m65", "n": "વાસાણી રોમિક ડાહ્યાભાઈ", "y": 1985, "m": 9, "d": 18, "dr": "https://drive.google.com/open?id=1OLnwagfWHYqqvxNTS3uzekmjqGzptVp_"}, {"id": "m66", "n": "ચવાણ વિનોદભાઈ ખીમજીભાઈ", "y": 1975, "m": 3, "d": 19, "dr": "https://drive.google.com/open?id=15FDKEqXlYOYSVVmIKVX8-FCpta4jXU0c"}, {"id": "m67", "n": "સાંખલા વિશાલ લાલજીભાઈ", "y": 1987, "m": 3, "d": 7, "dr": "https://drive.google.com/open?id=1wBu0A_HEI-1S39HAPl8S5oNohgJfi6sH"}, {"id": "m68", "n": "સાંખલા વિશાલભાઈ ગોપાલભાઈ", "y": 1986, "m": 6, "d": 15, "dr": "https://drive.google.com/open?id=1MDGBBsmqy7OXQB5l1lEvef8gX9lpDuvA"}, {"id": "m69", "n": "સાંખલા વૈભવ હરીશ", "y": 2023, "m": 7, "d": 4, "dr": "https://drive.google.com/open?id=1uFgA6a5gNU7btTnqKGsVd-SDP4oMMtWn"}, {"id": "m70", "n": "નાકરાણી શૈલેષ રામજીભાઈ", "y": 1986, "m": 10, "d": 13, "dr": "https://drive.google.com/open?id=1rtK_RDID4ys-uG6ZF22MLdpR4yL5mYLc"}, {"id": "m71", "n": "પોકાર શૈલેષ ખીમજીભાઈ", "y": 1984, "m": 1, "d": 3, "dr": "https://drive.google.com/open?id=1JK1XJk3tqg2nOYBUJvFRsctjo0CXUCMB"}, {"id": "m72", "n": "પોકાર શૈલેષકુમાર અમૃતલાલ", "y": 1988, "m": 6, "d": 1, "dr": "https://drive.google.com/open?id=1pm6dfKmLHTl3YJa2mVuPwq9mrKs-H4cr"}, {"id": "m73", "n": "ચૌહાણ સમર્થ વિનોદભાઈ", "y": 2006, "m": 1, "d": 31, "dr": "https://drive.google.com/open?id=1A_YqIAxj3BM7CKKADMQSyGAj-z3eFK_x"}, {"id": "m74", "n": "પોકાર સિદ્ધાર્થ ડાહ્યાભાઈ", "y": 2004, "m": 11, "d": 20, "dr": "https://drive.google.com/open?id=1lp7lz3MR0fT1A_XpjUkrQVcLUIrhEzSE"}, {"id": "m75", "n": "પોકાર સુરેશકુમાર અમૃતલાલ", "y": 1985, "m": 4, "d": 15, "dr": "https://drive.google.com/open?id=1sKwDbLw00s5q0UfMm_D_PC44O8BzM26k"}, {"id": "m76", "n": "ચવાણ સુરેશભાઇ મનજીભાઇ", "y": 1978, "m": 5, "d": 2, "dr": "https://drive.google.com/open?id=1Df-Jxnfyht01CqtxKyZpOuLiQnQLr7Dn"}, {"id": "m77", "n": "પોકાર હરિકૃષ્ણ કેશવલાલ", "y": 1999, "m": 6, "d": 18, "dr": "https://drive.google.com/open?id=1NqhtVVgiieCgYi9yUTmaJfOqmInZSo7r"}, {"id": "m78", "n": "સાખલા હરીશ ધનજી", "y": 2024, "m": 10, "d": 8, "dr": "https://drive.google.com/open?id=1XCMtUAJFa2BRgzVj-TWJRglgX7nGKv0g"}, {"id": "m79", "n": "સાખંલા હર્ષિત વિજેશભાઈ", "y": 1995, "m": 3, "d": 14, "dr": "https://drive.google.com/open?id=1Y8pXTBUg1QNu7B_8DWi6UDvggAIQEhiT"}, {"id": "m80", "n": "નાકરાણી હાર્દિકભાઈ હીરાલાલ", "y": 1989, "m": 3, "d": 17, "dr": "https://drive.google.com/open?id=1jVe5xaGmjVp6f5QLjUUQoBfOumqvyRec"}, {"id": "m81", "n": "વાસાણી હિતેશ ધરમસીભાઈ", "y": 1980, "m": 3, "d": 25, "dr": "https://drive.google.com/open?id=1r9G9Tioq_sglQWPjLW7HsLLEkSV03eHg"}, {"id": "m82", "n": "નાકરાણી હિરેનકુમાર ભવાનભાઈ", "y": 1990, "m": 4, "d": 5, "dr": "https://drive.google.com/open?id=1mZMvp57hbVr3f_5nWkpwBZRpqmHmULb2"}, {"id": "m83", "n": "સાંખલા હીતુલ વિજેશભાઈ", "y": 1999, "m": 3, "d": 27, "dr": "https://drive.google.com/open?id=1UW3jy8_tBS2Kdt2QFEBU5-mBaD6BvcvM"}, {"id": "m84", "n": "પટેલ હેત રાકેશકુમાર", "y": 2005, "m": 6, "d": 11, "dr": "https://drive.google.com/open?id=16jeSJFUYvjeBSSCXxBZIOtMgF7jTjuhx"}, {"id": "m85", "n": "વાસાણી જયદીપ જીગ્નેશ ભિમજીભાઈ વાસાણી", "y": 2007, "m": 2, "d": 15, "dr": "https://drive.google.com/open?id=1qK5A_cQoJi0s8TUqohL9oe7kxSzRDgzG"}];
+const MANDAL='શ્રી નરનારાયણદેવ યુવક-યુવતી મંડળ, નડિયાદ';
+const GU='૦૧૨૩૪૫૬૭૮૯',g=n=>String(n).replace(/\d/g,d=>GU[d]);
+const MON=['જાન્યુઆરી','ફેબ્રુઆરી','માર્ચ','એપ્રિલ','મે','જૂન','જુલાઈ','ઓગસ્ટ','સપ્ટેમ્બર','ઓક્ટોબર','નવેમ્બર','ડિસેમ્બર'];
+const WDs=['ર','સો','મં','બુ','ગુ','શુ','શ'];
+const DEFAULT_MSG='🌸 જન્મદિન મંગલમય હો, {નામ}! 🌸\n\nશ્રી નરનારાયણદેવના આશીર્વાદ સદાય આપની સાથે રહે. આપનું {ઉંમર}મું વર્ષ સુખ, સ્વાસ્થ્ય અને સમૃદ્ધિથી ભરેલું રહે. 🙏\n\n– '+MANDAL;
+const esc=s=>String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=id=>document.getElementById(id);
+let extra={},settings={time:'08:00',admin:'',msg:DEFAULT_MSG},db=null,assets=null;
+function toast(t){const e=$('toast');e.textContent=t;e.classList.add('show');clearTimeout(e._t);e._t=setTimeout(()=>e.classList.remove('show'),2200)}
+
+/* dates */
+function today(){const d=new Date();return new Date(d.getFullYear(),d.getMonth(),d.getDate())}
+function nextB(m,T){let d=new Date(T.getFullYear(),m.m-1,m.d);if(d<T)d=new Date(T.getFullYear()+1,m.m-1,m.d);return d}
+function daysTo(m,T){return Math.round((nextB(m,T)-T)/864e5)}
+function ageOk(m){return m.y<=today().getFullYear()-8}
+function ageAt(m,d){return d.getFullYear()-m.y}
+function ageTxt(m){return ageOk(m)?g(ageAt(m,nextB(m,today())))+' વર્ષ':'જન્મવર્ષ તપાસો'}
+function short(n){const p=n.split(/\s+/);return p.length>1?p[1].replace(/(ભાઈ|ભાઇ)$/,'')+'ભાઈ '+p[0]:n}
+function initial(n){const p=n.split(/\s+/);return (p[1]||p[0]).slice(0,1)}
+function dstr(m){return g(m.d)+' '+MON[m.m-1]}
+function photoSrc(m){const x=extra[m.id]||{};return x.photo?'/_blob/'+x.photo:''}
+function av(m,cls='',crown=false){const s=photoSrc(m);return `<div class="av ${cls}">${crown?'<span class="crown">👑</span>':''}<div>${s?`<img src="${s}" alt="">`:esc(initial(m.n))}</div></div>`}
+
+/* whatsapp */
+function digits(p){p=(p||'').replace(/\D/g,'');if(p.length===10)p='91'+p;return p}
+function wishText(m){return (settings.msg||DEFAULT_MSG).replaceAll('{નામ}',short(m.n)).replaceAll('{ઉંમર}',ageOk(m)?g(ageAt(m,nextB(m,today()))):'')}
+function waLink(m){return 'https://wa.me/'+digits((extra[m.id]||{}).phone)+'?text='+encodeURIComponent(wishText(m))}
+function remindText(list,label){return '🔔 '+label+' જન્મદિવસ:\n'+list.map(m=>'• '+m.n+' ('+dstr(m)+(ageOk(m)?', '+ageTxt(m):'')+')').join('\n')+'\n\n– '+MANDAL}
+function adminLink(t){return 'https://wa.me/'+digits(settings.admin)+'?text='+encodeURIComponent(t)}
+async function copy(t){try{await navigator.clipboard.writeText(t);toast('કૉપી થઈ ગયું ✓')}catch(e){toast('કૉપી ન થયું')}}
+
+/* ---------- stage scaling: data-b="x,y,w,h" in image pixels ---------- */
+function layoutStage(st){const k=st.clientWidth/941;st.style.setProperty('--k',k);if(st.dataset.h)st.style.height=st.dataset.h*k+'px';
+  st.querySelectorAll('[data-b]').forEach(el=>{const [x,y,w,h]=el.dataset.b.split(',').map(Number);
+    Object.assign(el.style,{left:x*k+'px',top:y*k+'px',width:w*k+'px',height:h*k+'px'});if(el.dataset.fs)el.style.fontSize=el.dataset.fs*k+'px'})}
+function layoutAll(){document.querySelectorAll('.stage').forEach(layoutStage)}
+addEventListener('resize',layoutAll);
+document.querySelectorAll('.headslot').forEach(s=>s.replaceWith($('headTpl').content.cloneNode(true)));
+
+/* ---------- HOME ---------- */
+let hIdx=0,hList=[],hTimer=null;
+function renderHome(){
+  const T=today();const todays=MEMBERS.filter(m=>daysTo(m,T)===0);
+  hList=todays.length?todays:[MEMBERS.slice().sort((a,b)=>daysTo(a,T)-daysTo(b,T))[0]];
+  if(hIdx>=hList.length)hIdx=0;
+  const m=hList[hIdx],isT=todays.length>0;
+  $('lbl').innerHTML=`<div class="lbl2" data-b="${isT?'262,452,417,72':'192,452,557,72'}" data-fs="34"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="#c2185b" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>${isT?'આજનો જન્મદિવસ':'આગામી જન્મદિવસ · '+g(daysTo(m,T))+' દિવસ'}</div>`;
+  const s=photoSrc(m);
+  $('hPhoto').innerHTML=s?`<img src="${s}" alt="">`:`<span class="ini" style="font-size:${140*$('stage').clientWidth/941}px">${esc(initial(m.n))}</span>`;
+  $('hName').textContent=m.n;
+  const k=$('stage').clientWidth/941;const fit=Math.min(40,Math.floor(900/Math.max(10,m.n.length)));$('hName').dataset.fs=fit;
+  $('hDate').innerHTML=`<span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="#c2185b" stroke-width="2" style="vertical-align:-.12em"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> ${dstr(m)}${ageOk(m)?' · '+ageTxt(m):''}</span>`;
+  $('hSwipe').innerHTML=hList.length>1?`<button class="swipe" data-hs="-1" data-b="150,715,64,64">‹</button><button class="swipe" data-hs="1" data-b="727,715,64,64">›</button><div class="dots" data-b="300,915,341,16">${hList.map((_,i)=>`<i class="${i===hIdx?'on':''}"></i>`).join('')}</div>`:'';
+  layoutStage($('stage'));
+  clearInterval(hTimer);if(hList.length>1)hTimer=setInterval(()=>{hIdx=(hIdx+1)%hList.length;renderHome()},5000);
+}
+$('hPhoto').onclick=()=>celebrate(hList[hIdx].id);
+$('hSend').onclick=()=>celebrate(hList[hIdx].id);
+
+/* ---------- UPCOMING ---------- */
+let upF=30;
+function memberRow(m,right){const x=extra[m.id]||{};
+  return `<div class="cr row${daysTo(m,today())===1?' gold':''}" data-edit="${m.id}" role="button" tabindex="0">${av(m,'',daysTo(m,today())===0)}<div class="t"><b>${esc(m.n)}</b><small>${dstr(m)} · ${ageTxt(m)}${x.phone?'':' · <span class="warn">નંબર નથી</span>'}</small></div>${right||''}</div>`}
+function dayBadge(d){return d===0?'<span class="badge gold">આજે 🎉</span>':d===1?'<span class="badge">આવતીકાલે</span>':`<span class="badge ${d<=7?'':'soft'}">${g(d)} દિવસ</span>`}
+function renderUp(){
+  $('upF').innerHTML=[[7,'૭ દિવસ'],[30,'૩૦ દિવસ'],[90,'૩ મહિના'],[366,'આખું વર્ષ']].map(([v,l])=>`<button class="btns ${upF===v?'on':''}" data-upf="${v}">${l}</button>`).join('');
+  const T=today();const L=MEMBERS.map(m=>[m,daysTo(m,T)]).filter(([m,d])=>d<=upF).sort((a,b)=>a[1]-b[1]);
+  $('upList').innerHTML=L.length?L.map(([m,d])=>memberRow(m,dayBadge(d))).join(''):'<div class="cr empty">આ સમયમાં કોઈ જન્મદિવસ નથી</div>';
+}
+
+/* ---------- CALENDAR ---------- */
+let cm=today().getMonth(),cy=today().getFullYear(),csel=null;
+function renderCal(){
+  const T=today();$('calT').textContent=MON[cm]+' '+g(cy);
+  const first=new Date(cy,cm,1).getDay(),n=new Date(cy,cm+1,0).getDate();const by={};
+  MEMBERS.forEach(m=>{if(m.m===cm+1)(by[m.d]=by[m.d]||[]).push(m)});
+  let h=WDs.map(w=>`<div class="wd">${w}</div>`).join('');for(let i=0;i<first;i++)h+='<div></div>';
+  for(let d=1;d<=n;d++){const isT=cy===T.getFullYear()&&cm===T.getMonth()&&d===T.getDate();h+=`<button class="c ${by[d]?'has':''} ${isT?'today':''} ${csel===d?'sel':''}" data-day="${d}">${g(d)}</button>`}
+  $('grid').innerHTML=h;
+  const list=csel?(by[csel]||[]):MEMBERS.filter(m=>m.m===cm+1).sort((a,b)=>a.d-b.d);
+  $('calL').textContent=csel?g(csel)+' '+MON[cm]:MON[cm]+'ના જન્મદિવસ';$('calC').textContent=g(list.length)+' સભ્યો';
+  $('calList').innerHTML=list.length?list.map(m=>memberRow(m,`<span class="badge soft">${g(m.d)} ${MON[m.m-1].slice(0,3)}</span>`)).join(''):'<div class="cr empty">આ દિવસે કોઈ જન્મદિવસ નથી</div>';
+}
+
+/* ---------- MEMBERS ---------- */
+let mf='all';
+function renderMembers(){
+  $('mF').innerHTML=[['all','બધા ('+g(MEMBERS.length)+')'],['nophone','નંબર બાકી'],['nophoto','ફોટો બાકી'],['check','વર્ષ તપાસો']].map(([k,l])=>`<button class="btns ${mf===k?'on':''}" data-mf="${k}">${l}</button>`).join('');
+  const q=$('q').value.trim();let L=MEMBERS.filter(m=>!q||m.n.includes(q));
+  if(mf==='nophone')L=L.filter(m=>!(extra[m.id]||{}).phone);if(mf==='nophoto')L=L.filter(m=>!(extra[m.id]||{}).photo);if(mf==='check')L=L.filter(m=>!ageOk(m));
+  L.sort((a,b)=>a.n.localeCompare(b.n,'gu'));
+  $('mList').innerHTML=L.length?L.map(m=>memberRow(m,'<span style="color:#d0558b;font-size:22px">›</span>')).join(''):'<div class="cr empty">કોઈ સભ્ય મળ્યા નહીં</div>';
+}
+
+/* ---------- REMINDER ---------- */
+function renderRem(){
+  const T=today();const t0=MEMBERS.filter(m=>daysTo(m,T)===0),t1=MEMBERS.filter(m=>daysTo(m,T)===1),t7=MEMBERS.filter(m=>daysTo(m,T)===7);
+  const block=(title,ic,list,label)=>`<div class="secth"><h3>${ic} ${title}</h3><span>${list.length?g(list.length)+' સભ્ય':''}</span></div>`+
+    (list.length?list.map(m=>memberRow(m,label==='આજે'?`<a class="btns" href="${waLink(m)}" target="_blank" rel="noopener">💬</a>`:dayBadge(daysTo(m,T)))).join('')+
+     (label!=='આજે'?`<a class="btnm wa" href="${adminLink(remindText(list,label))}" target="_blank" rel="noopener" style="margin-bottom:6px">💬 કમિટીને રિમાઇન્ડર મોકલો</a>`:'')
+     :`<div class="cr empty">કોઈનો જન્મદિવસ નથી</div>`);
+  $('remBody').innerHTML=`<div class="cr field" style="display:flex;align-items:center;gap:12px"><span style="font-size:28px">⏰</span><div style="flex:1"><b class="bb" style="color:#9c0f4f">દરરોજ ${g(settings.time||'08:00')} વાગે</b><p style="margin:0">સમય બદલવા મેનુ → સેટિંગ</p></div><a class="btns" href="#menu">બદલો</a></div>`+
+    block('આજે','🎂',t0,'આજે')+block('આવતીકાલે','🔔',t1,'આવતીકાલે')+block('૭ દિવસ પછી','🪷',t7,'૭ દિવસ પછી');
+}
+
+/* ---------- SETTINGS ---------- */
+function renderSettings(){$('sTime').value=settings.time||'08:00';$('sAdmin').value=settings.admin||'';$('sMsg').value=settings.msg||DEFAULT_MSG;$('sStat').textContent=db?'':'સેવ કરવા claude.ai માં સાઇન-ઇન કરો'}
+$('sSave').onclick=async()=>{const n={time:$('sTime').value||'08:00',admin:$('sAdmin').value.replace(/[^\d+]/g,''),msg:$('sMsg').value.trim()||DEFAULT_MSG};
+  if(!db){toast('સેવ ન થયું');return}try{await db.doc('settings/main').set(n);settings=n;toast('સેટિંગ સેવ થયું ✓');renderAll()}catch(e){toast('સેવ કરવાની પરવાનગી નથી')}};
+
+/* ---------- member sheet ---------- */
+function openEdit(id){
+  const m=MEMBERS.find(x=>x.id===id),x=extra[id]||{},T=today(),d=daysTo(m,T);
+  $('sheet').innerHTML=`<button class="x" id="shX" aria-label="બંધ">×</button>
+   <div style="display:flex;flex-direction:column;align-items:center;text-align:center;gap:6px">${av(m,'lg',d===0)}
+    <h3 class="bb" style="font-size:22px;color:#6b0f3a;margin-top:6px">${esc(m.n)}</h3>
+    <div style="color:var(--mute)">${dstr(m)} ${g(m.y)} · ${ageTxt(m)}</div>${dayBadge(d)}</div>
+   <div class="cr field" style="margin-top:14px"><label for="ePh">મોબાઇલ નંબર</label><input class="inp" id="ePh" inputmode="tel" placeholder="98XXXXXXXX" value="${esc(x.phone||'')}"></div>
+   <div class="cr field"><label>ફોટો</label><div style="display:flex;gap:8px;flex-wrap:wrap"><label class="btns" for="eFile" ${assets?'':'style="opacity:.45;pointer-events:none"'}>📷 ફોટો પસંદ કરો</label><input id="eFile" type="file" accept="image/*" hidden><a class="btns" href="${esc(m.dr)}" target="_blank" rel="noopener">Drive નો જૂનો ફોટો</a></div>
+    <p id="eSt">${assets?'ફોટો પસંદ કરો એટલે આપોઆપ અપલોડ થશે.':(db?'ફોટો અપલોડ ફક્ત એડિટર કરી શકે.':'સેવ કરવા claude.ai માં સાઇન-ઇન કરો.')}</p></div>
+   <div style="display:grid;gap:10px"><button class="btnm" id="eSave" ${db?'':'disabled style="opacity:.5"'}>સેવ કરો</button>
+    <button class="btnm" data-fly="${m.id}">🙏 મંગલ શુભકામનાઓ પાઠવો</button>
+    <div style="display:flex;gap:8px;justify-content:center"><a class="btns" href="${waLink(m)}" target="_blank" rel="noopener">💬 સીધું WhatsApp</a><button class="btns" id="eCopy">📋 સંદેશ કૉપી</button></div></div>`;
+  $('ov').classList.add('show');$('shX').onclick=closeEdit;$('eCopy').onclick=()=>copy(wishText(m));
+  $('eFile').onchange=async e=>{const f=e.target.files[0];if(!f||!assets)return;$('eSt').textContent='અપલોડ થાય છે…';
+    try{const b=await shrink(f);const r=await assets.upload(b);await saveExtra(id,{photo:r.id});toast('ફોટો સેવ થયો ✓');openEdit(id);renderAll()}catch(err){$('eSt').textContent='અપલોડ ન થયું'}};
+  $('eSave').onclick=async()=>{try{await saveExtra(id,{phone:$('ePh').value.replace(/[^\d+]/g,'')});toast('સેવ થયું ✓');closeEdit();renderAll()}catch(e){toast('સેવ ન થયું')}};
+}
+function closeEdit(){$('ov').classList.remove('show')}
+function shrink(file){return new Promise((res,rej)=>{const img=new Image();img.onload=()=>{const s=Math.min(1,700/Math.max(img.width,img.height));const c=document.createElement('canvas');c.width=img.width*s|0;c.height=img.height*s|0;c.getContext('2d').drawImage(img,0,0,c.width,c.height);c.toBlob(b=>b?res(b):rej(new Error('img')),'image/jpeg',.86)};img.onerror=rej;img.src=URL.createObjectURL(file)})}
+async function saveExtra(id,patch){if(!db)throw new Error('no db');const n=Object.assign({},extra[id],patch);await db.doc('members/'+id).set(n);extra[id]=n}
+
+/* ---------- celebration: fireworks + lotus petals ---------- */
+let fx=null;
+function celebrate(id){
+  const m=MEMBERS.find(x=>x.id===id);const s=photoSrc(m);closeEdit();
+  $('flyIn').innerHTML=`<div class="fr" id="frStage" style="aspect-ratio:900/822"><div class="photo" data-p="1">${s?`<img src="${s}" alt="">`:`<span class="ini">${esc(initial(m.n))}</span>`}</div><img src="frame.png" alt="" style="position:absolute;inset:0;width:100%;height:100%"></div>
+   <div class="ptitle" style="font-size:33px;margin-top:6px;white-space:nowrap">જન્મદિન મંગલમય હો!</div><img src="divider.png" alt="" style="width:62%;margin:4px auto 0">
+   <div class="namepill nm" style="position:relative;border:2px solid #f0c27a">${esc(m.n)}</div>
+   <div class="bb" style="margin-top:8px;color:#6b0f3a;font-size:18px"><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="#c2185b" stroke-width="2" style="vertical-align:-.12em"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> ${dstr(m)}${ageOk(m)?' · '+ageTxt(m):''}</div>
+   <div style="width:100%;padding:16px 8px 0;display:grid;gap:10px"><a class="btnm" href="${waLink(m)}" target="_blank" rel="noopener">🙏 | મંગલ શુભકામનાઓ પાઠવો ›</a>
+   <button class="btns" id="flyCopy" style="justify-self:center">📋 સંદેશ કૉપી કરો</button></div>`;
+  $('fly').classList.add('show');$('flyCopy').onclick=()=>copy(wishText(m));
+  requestAnimationFrame(()=>{const st=$('frStage'),k=st.clientWidth/1312,p=st.querySelector('.photo');
+    Object.assign(p.style,{left:(645-410)*k+'px',top:(630-410)*k+'px',width:820*k+'px',height:820*k+'px'});const ini=st.querySelector('.ini');if(ini)ini.style.fontSize=360*k+'px'});
+  if(fx)fx.stop();fx=show($('flyC'));
+}
+$('flyX').onclick=()=>{$('fly').classList.remove('show');if(fx){fx.stop();fx=null}};
+function show(cv){
+  const ctx=cv.getContext('2d');let W,H,dpr=Math.min(2,devicePixelRatio||1),run=true,P=[],R=[],L=[];
+  const cols=['#ffffff','#ffd77d','#ff5fa2','#e0a43a','#ff9ec4','#fff1b8','#d81b6a'];
+  function size(){W=innerWidth;H=innerHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}size();addEventListener('resize',size);
+  function launch(){R.push({x:W*(.12+Math.random()*.76),y:H,vy:-(H*.013+Math.random()*H*.006)-4,vx:(Math.random()-.5),ty:H*(.08+Math.random()*.3),c:cols[Math.random()*cols.length|0]})}
+  function burst(r){const n=80+Math.random()*50|0,c2=cols[Math.random()*cols.length|0],sp=2.2+Math.random()*2.4;for(let i=0;i<n;i++){const a=i/n*Math.PI*2,s=sp*(.35+Math.random()*.75);P.push({x:r.x,y:r.y,vx:Math.cos(a)*s,vy:Math.sin(a)*s,l:1,dl:.009+Math.random()*.01,c:i%3?r.c:c2})}}
+  for(let i=0;i<26;i++)L.push({x:Math.random()*innerWidth,y:-Math.random()*innerHeight,s:8+Math.random()*10,v:.6+Math.random()*1.2,a:Math.random()*6,va:(Math.random()-.5)*.04,sw:Math.random()*6});
+  launch();setTimeout(launch,200);setTimeout(launch,450);let t=0;
+  function petal(p){ctx.save();ctx.translate(p.x,p.y);ctx.rotate(p.a);const gr=ctx.createLinearGradient(0,-p.s,0,p.s);gr.addColorStop(0,'#fff0f6');gr.addColorStop(1,'#f06aa0');ctx.fillStyle=gr;ctx.globalAlpha=.9;
+    ctx.beginPath();ctx.moveTo(0,-p.s);ctx.quadraticCurveTo(p.s*.7,0,0,p.s);ctx.quadraticCurveTo(-p.s*.7,0,0,-p.s);ctx.fill();ctx.restore()}
+  function frame(){if(!run)return;t++;ctx.clearRect(0,0,W,H);
+    if(Math.random()<.05)launch();
+    ctx.globalCompositeOperation='source-over';
+    R=R.filter(r=>{r.x+=r.vx;r.y+=r.vy;r.vy+=.08;ctx.fillStyle=r.c;ctx.beginPath();ctx.arc(r.x,r.y,2.4,0,7);ctx.fill();if(r.y<=r.ty||r.vy>=0){burst(r);return false}return true});
+    P=P.filter(p=>{p.x+=p.vx;p.y+=p.vy;p.vx*=.985;p.vy=p.vy*.985+.04;p.l-=p.dl;if(p.l<=0)return false;ctx.globalAlpha=p.l;ctx.fillStyle=p.c;ctx.beginPath();ctx.arc(p.x,p.y,2.2,0,7);ctx.fill();
+      ctx.globalAlpha=p.l*.25;ctx.beginPath();ctx.arc(p.x,p.y,5,0,7);ctx.fill();return true});
+    ctx.globalAlpha=1;L.forEach(p=>{p.y+=p.v;p.a+=p.va;p.x+=Math.sin((t+p.sw*40)/40)*.6;if(p.y>H+20){p.y=-20;p.x=Math.random()*W}petal(p)});
+    requestAnimationFrame(frame)}
+  if(!matchMedia('(prefers-reduced-motion: reduce)').matches)requestAnimationFrame(frame);
+  return{stop(){run=false;ctx.clearRect(0,0,W,H)}}
+}
+
+/* ---------- routing ---------- */
+const VIEWS=['home','upcoming','calendar','members','reminder','menu'];
+function route(){const v=VIEWS.includes(location.hash.slice(1))?location.hash.slice(1):'home';
+  VIEWS.forEach(x=>$('v-'+x).classList.toggle('on',x===v));scrollTo(0,0);requestAnimationFrame(layoutAll)}
+addEventListener('hashchange',route);
+function renderAll(){renderHome();renderUp();renderCal();renderMembers();renderRem();renderSettings()}
+document.addEventListener('click',e=>{
+  const f=e.target.closest('[data-fly]');if(f){celebrate(f.dataset.fly);return}
+  const ed=e.target.closest('[data-edit]');if(ed&&!e.target.closest('a')){openEdit(ed.dataset.edit);return}
+  const hs=e.target.closest('[data-hs]');if(hs){hIdx=(hIdx+(+hs.dataset.hs)+hList.length)%hList.length;renderHome();return}
+  const u=e.target.closest('[data-upf]');if(u){upF=+u.dataset.upf;renderUp();return}
+  const mfb=e.target.closest('[data-mf]');if(mfb){mf=mfb.dataset.mf;renderMembers();return}
+  const dy=e.target.closest('[data-day]');if(dy){const d=+dy.dataset.day;csel=csel===d?null:d;renderCal();return}
+});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'){closeEdit();$('flyX').click()}if(e.key==='Enter'){const ed=e.target.closest&&e.target.closest('[data-edit]');if(ed)openEdit(ed.dataset.edit)}});
+$('ov').addEventListener('click',e=>{if(e.target.id==='ov')closeEdit()});
+$('q').addEventListener('input',renderMembers);
+$('pm').onclick=()=>{cm--;if(cm<0){cm=11;cy--}csel=null;renderCal()};
+$('nm').onclick=()=>{cm++;if(cm>11){cm=0;cy++}csel=null;renderCal()};
+
+route();renderAll();
+let dk=today().toDateString();setInterval(()=>{if(today().toDateString()!==dk){dk=today().toDateString();renderAll()}},60000);
+
+/* ---------- storage ---------- */
+(async()=>{try{
+  if(!window.claude||!claude.use)return;
+  db=await claude.use('db');try{assets=await claude.use('assets')}catch(e){assets=null}
+  if(!db){renderSettings();return}
+  const tm=setTimeout(()=>toast('ડેટા લોડ થવામાં વાર લાગે છે…'),10000);
+  db.collection('members').onSnapshot(s=>{clearTimeout(tm);const o={};s.docs.forEach(d=>{o[d.id]=d.data()});extra=o;renderAll()},()=>clearTimeout(tm));
+  db.doc('settings/main').onSnapshot(s=>{if(s.exists){settings=Object.assign({time:'08:00',admin:'',msg:DEFAULT_MSG},s.data());renderAll()}},()=>{});
+  renderAll();
+}catch(e){console.log('storage',e)}})();
+</script>
+</body>
+</html>
