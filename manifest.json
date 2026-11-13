@@ -1,0 +1,28 @@
+{
+ "name": "જન્મદિન મંગલોત્સવ – શ્રી નરનારાયણદેવ યુવક-યુવતી મંડળ, નડિયાદ",
+ "short_name": "મંગલોત્સવ",
+ "start_url": "./",
+ "scope": "./",
+ "display": "standalone",
+ "background_color": "#fcd6e6",
+ "theme_color": "#d4155f",
+ "lang": "gu",
+ "icons": [
+  {
+   "src": "icon-192.png",
+   "sizes": "192x192",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png"
+  },
+  {
+   "src": "icon-512.png",
+   "sizes": "512x512",
+   "type": "image/png",
+   "purpose": "maskable"
+  }
+ ]
+}
