@@ -210,13 +210,13 @@ textarea.inp{min-height:120px;resize:vertical;line-height:1.5}
     <img class="deco" src="lotus.png" alt="" data-b="40,318,150,105"><img class="deco" src="lotus.png" alt="" data-b="751,318,150,105" style="transform:scaleX(-1)">
     <div class="big-t" data-b="40,222,861,100" data-fs="74">જન્મદિન મંગલોત્સવ</div>
     <img class="deco" src="divider.png" alt="" data-b="280,318,381,41">
-    <div class="card" data-b="24,380,893,1118"></div>
+    <div class="card" id="hCard" data-b="24,380,893,1118"></div>
     <div id="lbl"></div>
     <button class="photo" id="hPhoto" aria-label="ફટાકડા" data-b="244,586,440,440"></button>
-    <img class="deco" src="frame.png" alt="" data-b="120,470,700,640">
+    <img class="deco" id="hFrame" src="frame.png" alt="" data-b="120,470,700,640">
     <div id="hSwipe"></div>
-    <div class="big-t" data-b="40,1108,861,86" data-fs="66">જન્મદિન મંગલમય હો!</div>
-    <img class="deco" src="divider.png" alt="" data-b="320,1190,301,32">
+    <div class="big-t" id="hTitle" data-b="40,1108,861,86" data-fs="66">જન્મદિન મંગલમય હો!</div>
+    <img class="deco" id="hDiv" src="divider.png" alt="" data-b="320,1190,301,32">
     <div class="namepill2" id="hName" data-b="216,1228,509,78" data-fs="42"></div>
     <div class="mtext" id="hDate" data-b="170,1312,601,48" data-fs="33" style="color:#5a1033;font-weight:700"></div>
     <button class="sendbtn" id="hSend" data-b="66,1372,809,104" data-fs="40">🙏 <i>|</i> મંગલ શુભકામનાઓ પાઠવો <b style="margin-left:.3em">›</b></button>
@@ -335,27 +335,49 @@ function layoutStage(st){const k=st.clientWidth/941;st.style.setProperty('--k',k
   st.querySelectorAll('[data-b]').forEach(el=>{const [x,y,w,h]=el.dataset.b.split(',').map(Number);
     Object.assign(el.style,{left:x*k+'px',top:y*k+'px',width:w*k+'px',height:h*k+'px'});if(el.dataset.fs)el.style.fontSize=el.dataset.fs*k+'px'})}
 function layoutAll(){document.querySelectorAll('.stage').forEach(layoutStage)}
-addEventListener('resize',layoutAll);
+addEventListener('resize',()=>{if(window._booted)renderHome();layoutAll()});
 document.querySelectorAll('.headslot').forEach(s=>s.replaceWith($('headTpl').content.cloneNode(true)));
 
 /* ---------- HOME ---------- */
-let hIdx=0,hList=[],hTimer=null;
+let G={};
+function homeGeom(){
+  const st=$('stage'),w=st.clientWidth||Math.min(innerWidth,470),k=w/941,vh=innerHeight;
+  const bgS=Math.max(vh/1672,innerWidth/941);            // fixed bg is 'cover', anchored at bottom
+  const diyaTopPx=vh-(1672-1450)*bgS;                    // flame top of the diya in the background
+  const target=(diyaTopPx-10)/k;                         // card bottom (image units)
+  let F=700+(target-1498)*1312/1199;F=Math.max(560,Math.min(880,F));
+  const fh=F*1199/1312,fx=(941-F)/2,fy=470,by=fy+fh,c=F/1312;
+  G={fx,fy,F,fh,px:fx+(645-410)*c,py:fy+(630-410)*c,pd:820*c,by};
+  const set=(id,b)=>{$(id).dataset.b=b.map(Math.round).join(',')};
+  set('hFrame',[fx,fy,F,fh]);set('hPhoto',[G.px,G.py,G.pd,G.pd]);
+  set('hTitle',[40,by-2,861,86]);set('hDiv',[320,by+80,301,32]);
+  set('hName',[216,by+118,509,78]);set('hDate',[170,by+202,601,48]);set('hSend',[66,by+262,809,104]);
+  const cb=by+262+104+24;set('hCard',[24,380,893,cb-380]);st.dataset.h=Math.round(cb+10);
+}
+let hIdx=0,hList=[],hTimer=null,hUser=false;
+function hGo(d){if(hList.length<2)return;hUser=true;hIdx=(hIdx+d+hList.length)%hList.length;renderHome();const p=$('hPhoto');p.animate([{transform:`translateX(${d*40}px)`,opacity:.2},{transform:'none',opacity:1}],{duration:300,easing:'ease-out'})}
 function renderHome(){
   const T=today();const todays=MEMBERS.filter(m=>daysTo(m,T)===0);
   hList=todays.length?todays:[MEMBERS.slice().sort((a,b)=>daysTo(a,T)-daysTo(b,T))[0]];
   if(hIdx>=hList.length)hIdx=0;
-  const m=hList[hIdx],isT=todays.length>0;
-  $('lbl').innerHTML=`<div class="lbl2" data-b="${isT?'262,398,417,72':'192,398,557,72'}" data-fs="34"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="#c2185b" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>${isT?'આજનો જન્મદિવસ':'આગામી જન્મદિવસ · '+g(daysTo(m,T))+' દિવસ'}</div>`;
+  homeGeom();const m=hList[hIdx],isT=todays.length>0;
+  $('lbl').innerHTML=`<div class="lbl2" data-b="${isT?'262,398,417,72':'192,398,557,72'}" data-fs="34"><svg viewBox="0 0 24 24" width="1.1em" height="1.1em" fill="none" stroke="#c2185b" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>${isT?(hList.length>1?'આજના જન્મદિવસ · '+g(hList.length):'આજનો જન્મદિવસ'):'આગામી જન્મદિવસ · '+g(daysTo(m,T))+' દિવસ'}</div>`;
   const s=photoSrc(m);
-  $('hPhoto').innerHTML=s?`<img src="${s}" alt="">`:`<span class="ini" style="font-size:${200*$('stage').clientWidth/941}px">${esc(initial(m.n))}</span>`;
+  $('hPhoto').innerHTML=s?`<img src="${s}" alt="">`:`<span class="ini" style="font-size:${G.pd*.45*$('stage').clientWidth/941}px">${esc(initial(m.n))}</span>`;
   $('hName').textContent=m.n;
   const k=$('stage').clientWidth/941;const fit=Math.min(42,Math.floor(960/Math.max(10,m.n.length)));$('hName').dataset.fs=fit;
   $('hDate').innerHTML=`<span><svg viewBox="0 0 24 24" width="1em" height="1em" fill="none" stroke="#c2185b" stroke-width="2" style="vertical-align:-.12em"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M3 10h18M8 3v4M16 3v4"/></svg> ${dstr(m)}${ageOk(m)?' · '+ageTxt(m):''}</span>`;
-  $('hSwipe').innerHTML=hList.length>1?`<button class="swipe" data-hs="-1" data-b="56,774,64,64">‹</button><button class="swipe" data-hs="1" data-b="821,774,64,64">›</button><div class="dots" data-b="300,1090,341,16">${hList.map((_,i)=>`<i class="${i===hIdx?'on':''}"></i>`).join('')}</div>`:'';
+  $('hSwipe').innerHTML=hList.length>1?`<button class="swipe" data-hs="-1" data-b="${Math.max(30,G.fx-10)},${G.py+G.pd/2-32},64,64">‹</button><button class="swipe" data-hs="1" data-b="${Math.min(847,G.fx+G.F-54)},${G.py+G.pd/2-32},64,64">›</button><div class="dots" data-b="300,${G.by-20},341,16">${hList.map((_,i)=>`<i class="${i===hIdx?'on':''}"></i>`).join('')}</div><div class="lbl2" data-b="${G.fx+G.F-150},${G.fy+40},120,52" data-fs="28">${g(hIdx+1)}/${g(hList.length)}</div>`:'';
   layoutStage($('stage'));
-  clearInterval(hTimer);if(hList.length>1)hTimer=setInterval(()=>{hIdx=(hIdx+1)%hList.length;renderHome()},5000);
+  clearInterval(hTimer);if(hList.length>1&&!hUser)hTimer=setInterval(()=>{hIdx=(hIdx+1)%hList.length;renderHome()},6000);
 }
-$('hPhoto').onclick=()=>celebrate(hList[hIdx].id);
+$('hPhoto').onclick=()=>{if(Date.now()-(window._sw||0)<400)return;celebrate(hList[hIdx].id)};
+(function(){let x0=null,y0=0;const st=$('stage');
+  st.addEventListener('touchstart',e=>{x0=e.touches[0].clientX;y0=e.touches[0].clientY},{passive:true});
+  st.addEventListener('touchend',e=>{if(x0===null)return;const dx=e.changedTouches[0].clientX-x0,dy=e.changedTouches[0].clientY-y0;x0=null;
+    if(Math.abs(dx)>45&&Math.abs(dx)>Math.abs(dy)*1.3){window._sw=Date.now();hGo(dx<0?1:-1)}},{passive:true});
+  document.addEventListener('keydown',e=>{if(!$('v-home').classList.contains('on'))return;if(e.key==='ArrowRight')hGo(1);if(e.key==='ArrowLeft')hGo(-1)});
+})();
 $('hSend').onclick=()=>celebrate(hList[hIdx].id);
 
 /* ---------- UPCOMING ---------- */
@@ -478,7 +500,7 @@ function renderAll(){renderHome();renderUp();renderCal();renderMembers();renderR
 document.addEventListener('click',e=>{
   const f=e.target.closest('[data-fly]');if(f){celebrate(f.dataset.fly);return}
   const ed=e.target.closest('[data-edit]');if(ed&&!e.target.closest('a')){openEdit(ed.dataset.edit);return}
-  const hs=e.target.closest('[data-hs]');if(hs){hIdx=(hIdx+(+hs.dataset.hs)+hList.length)%hList.length;renderHome();return}
+  const hs=e.target.closest('[data-hs]');if(hs){hGo(+hs.dataset.hs);return}
   const u=e.target.closest('[data-upf]');if(u){upF=+u.dataset.upf;renderUp();return}
   const mfb=e.target.closest('[data-mf]');if(mfb){mf=mfb.dataset.mf;renderMembers();return}
   const dy=e.target.closest('[data-day]');if(dy){const d=+dy.dataset.day;csel=csel===d?null:d;renderCal();return}
